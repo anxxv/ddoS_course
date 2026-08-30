@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Battles Arena</title>
+    <link rel="stylesheet" href="../assets/css/code-b.css" />
+</head>
+<body>
+  <header>
+    ⚔️ Code Battles Arena
+  </header>
+
+  <div class="battle-container">
+    <div class="task-selection">
+      <h2>Выберите задачу:</h2>
+      <select id="task-select">
+        <option value="sum">Сумма двух чисел</option>
+        <option value="palindrome">Проверка палиндрома</option>
+        <option value="reverse">Реверс строки</option>
+      </select>
+    </div>
+
+    <div class="editors">
+      <div class="editor">
+        <h3>👤 Player 1</h3>
+        <textarea id="code1">// Введите JS-код здесь</textarea>
+      </div>
+      <div class="editor">
+        <h3>🤖 Player 2</h3>
+        <textarea id="code2">// Введите JS-код здесь</textarea>
+      </div>
+    </div>
+
+    <button class="run-button" onclick="runBattle()">🚀 Запустить сражение</button>
+
+    <div class="output" id="battle-output">
+      // Результат будет показан здесь
+    </div>
+  </div>
+
+  <script src="../assets/js/code-b.js"></script>
+</body>
+</html>

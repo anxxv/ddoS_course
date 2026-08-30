@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Editor</title>
+  <link rel="stylesheet" href="../assets/css/task.css" />
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Tasks</h2>
+    <div class="task-list">
+      <button onclick="selectTask(0)">1. Print Hello</button>
+      <button onclick="selectTask(1)">2. Sum of Two</button>
+      <button onclick="selectTask(2)">3. Factorial</button>
+      <button onclick="selectTask(3)">4. Palindrome</button>
+      <button onclick="selectTask(4)">5. Max in Array</button>
+      <button onclick="selectTask(5)">6. Sort Numbers</button>
+      <button onclick="selectTask(6)">7. Reverse String</button>
+      <button onclick="selectTask(7)">8. Fibonacci</button>
+      <button onclick="selectTask(8)">9. Count Vowels</button>
+      <button onclick="selectTask(9)">10. Is Prime</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="editor">
+      <textarea id="code">// Write your code here</textarea>
+      <button class="run-button" onclick="runCode()">Run Code</button>
+    </div>
+    <div class="output" id="output">// Output will appear here...</div>
+  </div>
+
+  <script src="../assets/js/task.js"></script>
+</body>
+</html>

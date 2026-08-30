@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #000;
+      color: #fff;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: #000;
+      padding: 20px 0;
+      min-height: 100vh;
+      border-right: 1px solid #222;
+    }
+    .sidebar h2 {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar li {
+      padding: 12px 24px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.2s;
+    }
+    .sidebar li:hover {
+      background: #111;
+    }
+
+    .sidebar a {
+      color: #fff;          
+      text-decoration: none; 
+      display: block;        
+}
+
+  .sidebar a:hover {
+    text-decoration: none; 
+    color: #fff;           
+}
+
+
+    .main {
+      flex: 1;
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .burger {
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .search {
+      flex: 1;
+      position: relative;
+    }
+    .search input {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      background: #111;
+      color: #fff;
+      font-size: 14px;
+    }
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: #111;
+      padding: 16px;
+      border-radius: 10px;
+    }
+    .card h3 {
+      font-size: 12px;
+      font-weight: 500;
+      color: #777;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .card .value {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .card .delta {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .card .delta.green {
+      color: #3fbf59;
+    }
+    .card .delta.red {
+      color: #ff4e4e;
+    }
+
+    .charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .chart-box {
+      background: #111;
+      padding: 16px;
+      border-radius: 10px;
+    }
+    .chart-box h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .table-box {
+      background: #111;
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #222;
+      text-align: left;
+    }
+    th {
+      color: #777;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .status.easy .dot {
+      background: #3fbf59;
+    }
+    .status.medium .dot {
+      background: #ffa400;
+    }
+    .status.hard .dot {
+      background: #ff4e4e;
+    }
+    .access {
+      color: #777;
+    }
+
+    @media (max-width: 1024px) {
+      .charts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <a href=""><li>Home</li></a>
+      <a href="pages/task.html"><li>Tasks</li></a>
+      <a href="pages/code-b.html"><li>Code Battles</li></a>
+      <a href="pages/courses.html"><li>Courses</li></a>
+      <a href="https://t.me/cyberhackkk"><li>Discuss</li></a>
+      <a href="pages/library.html"><li>Library</li></a>
+      <a href="pages/secret.html"><li>Secret Chat</li></a>
+    </ul>
+  </nav>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="burger">&#9776;</div>
+      <div class="search">
+        <input type="text" placeholder="Search here..." />
+      </div>
+      <div class="avatar">
+        <a href="pages/profile.html"><img src="assets/img/UserProfilePicture.jpeg" alt="User avatar" /></a>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Tasks Solved</h3>
+        <div class="value">12,480</div>
+        <div class="delta green">↑ 39.3%</div>
+      </div>
+      <div class="card">
+        <h3>Video Courses Watched</h3>
+        <div class="value">1,720</div>
+        <div class="delta green">↑ 45.5%</div>
+      </div>
+      <div class="card">
+        <h3>Challenges Taken</h3>
+        <div class="value">230</div>
+        <div class="delta red">↓ 27.4%</div>
+      </div>
+      <div class="card">
+        <h3>Books Read</h3>
+        <div class="value">24</div>
+        <div class="delta red">↓ 77.4%</div>
+      </div>
+    </div>
+
+    <div class="charts">
+      <div class="chart-box">
+        <h3>Progress</h3>
+        <canvas id="progressChart" height="200"></canvas>
+      </div>
+      <div class="chart-box">
+        <h3>Coins</h3>
+        <canvas id="coinsChart" height="200"></canvas>
+      </div>
+    </div>
+
+    <div class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Course Name</th>
+            <th>Enrolled Users</th>
+            <th>Status</th>
+            <th>Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>00129384</td>
+            <td>Python for Beginners</td>
+            <td>420</td>
+            <td>
+              <div class="status easy"><span class="dot"></span>Easy</div>
+            </td>
+            <td class="access">free</td>
+          </tr>
+          <tr>
+            <td>00129385</td>
+            <td>Ethical Hacking Basics</td>
+            <td>310</td>
+            <td>
+              <div class="status medium"><span class="dot"></span>Medium</div>
+            </td>
+            <td class="access">free</td>
+          </tr>
+          <tr>
+            <td>00129386</td>
+            <td>Reverse Engineering Pro</td>
+            <td>150</td>
+            <td>
+              <div class="status hard"><span class="dot"></span>Hard</div>
+            </td>
+            <td class="access">paid</td>
+          </tr>
+          <tr>
+            <td>00129387</td>
+            <td>Web Security Advanced</td>
+            <td>280</td>
+            <td>
+              <div class="status medium"><span class="dot"></span>Medium</div>
+            </td>
+            <td class="access">paid</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx1 = document.getElementById("progressChart").getContext("2d");
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        datasets: [
+          {
+            label: "Tasks",
+            data: [30, 50, 40, 55, 60, 100, 90],
+            fill: true,
+            tension: 0.45,
+            borderColor: "#fff",
+            backgroundColor: "rgba(255,255,255,0.12)",
+            pointRadius: 4,
+            pointBackgroundColor: "#fff",
+            borderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          legend: { display: false },
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { color: "#777" },
+          },
+          y: {
+            grid: { color: "#222" },
+            ticks: { color: "#777" },
+          },
+        },
+      },
+    });
+
+    const ctx2 = document.getElementById("coinsChart").getContext("2d");
+    new Chart(ctx2, {
+      type: "bar",
+      data: {
+        labels: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+        datasets: [
+          {
+            label: "Coins",
+            data: [2000, 3000, 2500, 2800, 1500, 2700, 2900],
+            backgroundColor: "#b97aff",
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          legend: { display: false },
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { color: "#777" },
+          },
+          y: {
+            grid: { color: "#222" },
+            ticks: { color: "#777" },
+          },
+        },
+      },
+    });
+  </script>
+</body>
+</html>

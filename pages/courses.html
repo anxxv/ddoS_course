@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses</title>
+  <link rel="stylesheet" href="../assets/css/courses.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div class="sidebar">
+        <a href="../index.html"><img src="../assets/img/home.png" alt="Home"></a>
+      </div>
+      <div class="main-content">
+        <div class="search-bar">
+          <input type="text" placeholder="Search for courses" id="searchInput" />
+          <button onclick="searchCourses()">Search</button>
+        </div>
+        <div class="categories" id="categoryContainer">
+          <div class="category active" onclick="filterCategory('all')">All</div>
+          <div class="category" onclick="filterCategory('eBooks')">New</div>
+          <div class="category" onclick="filterCategory('new')">Cybersecurity</div>
+          <div class="category" onclick="filterCategory('bestseller')">Python</div>
+          <div class="category" onclick="filterCategory('audio')">JavaScript</div>
+          <div class="category" onclick="filterCategory('fiction')">Math</div>
+          <div class="category" onclick="filterCategory('romance')">SQL</div>
+          <div class="category" onclick="filterCategory('fantasy')">Top</div>
+        </div>
+    
+        <div class="container" id="courseContainer">
+        </div>
+      </div>    
+
+      <div id="courseList"></div>
+
+  <div id="courseView" style="display:none;">
+    <button onclick="closeCourse()">← Назад к списку курсов</button>
+    <div id="courseContent"></div>
+  </div>
+
+    <script src="../assets/js/courses.js"></script>
+</body>
+</html>

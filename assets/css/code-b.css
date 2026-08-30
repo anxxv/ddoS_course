@@ -1,0 +1,92 @@
+ body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #000;
+      color: #aaa;
+    }
+
+    header {
+      background: linear-gradient(#00001c, #101245, #80489b, #fa889d);
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .battle-container {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      gap: 30px;
+    }
+
+    .task-selection {
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .task-selection h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .task-selection select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background: #222;
+      color: #fff;
+    }
+
+    .editors {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .editor {
+      flex: 1 1 48%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .editor h3 {
+      margin: 0 0 10px;
+      color: #fa889d;
+    }
+
+    textarea {
+      height: 200px;
+      background: #111;
+      color: #fafafa;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      resize: vertical;
+    }
+
+    .run-button {
+      margin-top: 20px;
+      padding: 15px;
+      background: #fe4ccf;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      align-self: center;
+    }
+
+    .output {
+      background: #111;
+      color: #0f0;
+      padding: 20px;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }

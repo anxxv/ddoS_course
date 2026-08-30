@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Library</title>
+  <link rel="stylesheet" href="../assets/css/library.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="sidebar">
+    <a href="../index.html"><img src="https://img.icons8.com/material-outlined/24/home--v2.png" alt="Home" /></a>
+  </div>
+  <div class="main-content">
+    <div class="search-bar">
+      <input type="text" placeholder="Search for books" />
+      <button>Search</button>
+    </div>
+    <div class="categories">
+      <div class="category active" data-category="all">All</div>
+      <div class="category" data-category="ebooks">New</div>
+      <div class="category" data-category="new">Cybersecurity</div>
+      <div class="category" data-category="bestsellers">IT for begginers</div>
+      <div class="category" data-category="it">IT History</div>
+    </div>
+    <div class="books-row" id="books-row">
+    </div>
+  </div>
+  <div class="chat-section">
+    <div class="chat-header">Chat</div>
+    <div class="chat-messages">
+      <div class="message">Good Day!</div>
+      <div class="message user">Hi! Can you recommend some good books on cybersecurity?</div>
+      <div class="message">Sure, I can help. Are you looking for beginner-friendly books or more advanced ones?</div>
+      <div class="message user">I’m a beginner, so something easy to understand would be great.</div>
+      <div class="message">Got it! I recommend "Cybersecurity and Cyberwar" by P.W. Singer and Allan Friedman. It explains key concepts in a simple way.</div>
+      <div class="message user">Sounds perfect. Do you have books on programming too?</div>
+
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Write a message..." />
+      <button>Send</button>
+    </div>
+  </div>
+  <script src="../assets/js/library.js"></script>
+</body>
+</html>

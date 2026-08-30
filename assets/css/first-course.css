@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #1A1A1A;
+  color: #AAAAAA;
+  height: 100vh;
+  display: flex;
+}
+
+.layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #2a2a2a;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #444;
+}
+
+.sidebar h2 {
+  color: #FA889D;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar li:hover {
+  background: #3a3a3a;
+}
+
+.sidebar li.active {
+  background: #444;
+  font-weight: bold;
+  color: #B74CFE;
+}
+
+.sidebar li.done::after {
+  content: " ✅";
+  color: #7fff7f;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.content h2 {
+  color: #B74CFE;
+  margin-bottom: 20px;
+}
+
+.lesson-controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: #B74CFE;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #9447d2;
+}
